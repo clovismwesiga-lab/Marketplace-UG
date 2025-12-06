@@ -52,4 +52,5 @@ textarea{resize:vertical;min-height:90px}
 .kv div{background:#f2f6ff;padding:8px;border-radius:10px;font-weight:700;color:var(--brand)}
 .empty{padding:18px;border-radius:10px;text-align:center;color:var(--muted);background:#fff;border:1px dashed #e6eefc}
 
+
 .header-row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
