@@ -1,107 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marketplace UG – Buy & Sell Locally</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace UG</title>
 
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background: #f7f7f7;
-        color: #222;
-        padding-bottom: 80px;
-    }
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+            font-size: 20px; /* BIGGER TEXT */
+            line-height: 1.6;
+        }
 
-    /* Navigation Bar */
-    nav {
-        background: #ffffff;
-        padding: 12px 0;
-        display: flex;
-        justify-content: center;
-        gap: 18px;
-        font-size: 18px;
-        border-bottom: 1px solid #ddd;
-    }
+        header {
+            background: #0b62d4;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px; /* LARGE TITLE */
+        }
 
-    nav a {
-        text-decoration: none;
-        color: #007bff;
-        font-weight: bold;
-    }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #084a9b;
+            padding: 10px;
+        }
 
-    /* Main Title */
-    .title {
-        text-align: center;
-        padding: 20px 10px;
-        font-size: 26px;
-        font-weight: 900;
-        color: #000;
-    }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 22px; /* BIGGER NAV TEXT */
+            font-weight: bold;
+        }
 
-    /* Section Headers */
-    h2 {
-        font-size: 22px;
-        font-weight: bold;
-        margin: 15px 10px;
-    }
+        .container {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
 
-    /* Content boxes */
-    .box {
-        background: #fff;
-        margin: 10px;
-        padding: 15px;
-        border-radius: 6px;
-        font-size: 18px;
-        line-height: 1.5;
-    }
+        .card {
+            background: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
 
-    /* WhatsApp floating button */
-    .whatsapp-btn {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: #25D366;
-        color: #fff;
-        padding: 14px 20px;
-        border-radius: 50px;
-        text-decoration: none;
-        font-size: 18px;
-        font-weight: bold;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-</style>
+        footer {
+            margin-top: 40px;
+            background: #0b62d4;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 20px;
+        }
 
+        .whatsapp {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #25D366;
+            color: white;
+            border-radius: 8px;
+            margin-top: 10px;
+            text-decoration: none;
+            font-size: 22px;
+        }
+    </style>
 </head>
+
 <body>
+
+<header>Marketplace UG</header>
 
 <nav>
     <a href="index.html">Home</a>
-    <a href="add-listing.html">Post Item</a>
-    <a href="about.html">About</a>
-    <a href="testimonials.html">Testimonials</a>
-    <a href="contact.html">Contact</a>
+    <a href="post.html">Post Item</a>
+    <a href="contact.html">Contact Us</a>
 </nav>
 
-<div class="title">
-    Marketplace UG – Buy & Sell Locally
+<div class="container">
+
+    <div class="card">
+        <h2>Welcome to Marketplace UG</h2>
+        <p>
+            Buy and sell anything easily across Uganda.  
+            Fast uploads • No login required • Free listings.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Contact Us on WhatsApp</h2>
+        <p>Click below to chat instantly:</p>
+        <a class="whatsapp" href="https://wa.me/256748787964">
+            WhatsApp: 0748 787 964
+        </a>
+    </div>
+
 </div>
 
-<h2>Popular Categories</h2>
-<div class="box">
-    Phones | Cars | Land | Furniture | Jobs | Electronics | Fashion | Services
-</div>
-
-<h2>Featured Listings</h2>
-<div class="box">
-    No listings yet. Be the first to post!
-</div>
-
-<!-- WhatsApp Contact -->
-<a class="whatsapp-btn" href="https://wa.me/256748787964">
-    WhatsApp Us
-</a>
+<footer>
+    Marketplace UG © 2025 • Uganda's Trusted Online Market
+</footer>
 
 </body>
 </html>
