@@ -1,69 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Add Listing — Marketplace UG</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Listing - Marketplace UG</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between">
-      <div class="brand">Marketplace UG</div>
-      <nav>
+
+<!-- NAVIGATION -->
+<nav class="nav">
+    <h2 class="logo">Marketplace UG</h2>
+    <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="marketplace.html">Marketplace</a>
-        <a href="add-listing.html" class="active">Add Listing</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+        <a href="add-listing.html">Add Listing</a>
     </div>
-  </header>
+</nav>
 
-  <main class="container">
-    <div class="section">
-      <h2>Add / Edit Listing</h2>
+<!-- PAGE TITLE -->
+<section class="page-title">
+    <h1>Add Your Listing</h1>
+    <p>Post your item and reach thousands of Ugandan buyers</p>
+</section>
 
-      <form id="listingForm">
-        <div class="form-row">
-          <label>Title</label>
-          <input id="title" type="text" placeholder="e.g. Homemade Peanut Butter (500g)" required>
-        </div>
-        <div class="form-row">
-          <label>Category</label>
-          <input id="category" type="text" placeholder="e.g. Food, Service, Product">
-        </div>
-        <div class="form-row">
-          <label>Price (UGX)</label>
-          <input id="price" type="number" placeholder="e.g. 5000">
-        </div>
-        <div class="form-row">
-          <label>Location</label>
-          <input id="location" type="text" placeholder="e.g. Kariiba, Kazo">
-        </div>
-        <div class="form-row">
-          <label>Contact (phone/WhatsApp)</label>
-          <input id="contact" type="text" placeholder="e.g. 0748xxxxxxx">
-        </div>
-        <div class="form-row">
-          <label>Description</label>
-          <textarea id="description" placeholder="Short description"></textarea>
-        </div>
+<!-- FORM -->
+<section class="form-container">
+    <form>
 
-        <button class="btn" type="submit">Save Listing</button>
-        <div id="notice" class="notice"></div>
-      </form>
+        <label>Item Title</label>
+        <input type="text" placeholder="E.g. iPhone 12, Toyota Wish, House for rent">
 
-      <div style="margin-top:14px">
-        <button id="clearAll" class="btn" style="background:#eee;color:#111">Clear All Listings</button>
-      </div>
-    </div>
-  </main>
+        <label>Category</label>
+        <select>
+            <option>Choose category</option>
+            <option>Cars</option>
+            <option>Electronics</option>
+            <option>Real Estate</option>
+        </select>
 
-  <div class="container">
-    <div class="footer">© 2025 Marketplace UG</div>
-  </div>
+        <label>Price (UGX)</label>
+        <input type="number" placeholder="Enter amount">
 
-  <script src="app.js"></script>
+        <label>Location</label>
+        <input type="text" placeholder="E.g. Kampala, Mbarara, Gulu">
+
+        <label>Description</label>
+        <textarea rows="5" placeholder="Describe the item clearly..."></textarea>
+
+        <label>Upload Image</label>
+        <input type="file">
+
+        <button class="btn-primary submit-btn">Post Listing</button>
+
+    </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2025 Marketplace UG — Designed for Uganda</p>
+</footer>
+
 </body>
 </html>
