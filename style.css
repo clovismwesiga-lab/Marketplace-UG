@@ -1,11 +1,11 @@
-/* Global styles */
+/* Global body styles */
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
     background-color: #f4f4f9;
 }
 
-/* Navigation bar */
+/* Navigation Bar */
 nav {
     background-color: #333;
     padding: 15px;
@@ -17,6 +17,7 @@ nav a {
     text-decoration: none;
     font-weight: bold;
     text-transform: uppercase;
+    font-size: 16px; /* Adjust font size for nav links */
 }
 nav a:hover {
     color: #f4a261;
@@ -24,7 +25,7 @@ nav a:hover {
 
 /* Hero Section */
 .hero {
-    background-image: url('images/hero.jpg'); /* Add your hero image here */
+    background-image: url('images/hero.jpg'); /* Replace with your hero image */
     background-size: cover;
     background-position: center;
     height: 80vh;
@@ -34,11 +35,11 @@ nav a:hover {
     position: relative;
 }
 .hero-text h1 {
-    font-size: 3em;
+    font-size: 3em; /* Make this a bit smaller */
     margin-bottom: 10px;
 }
 .hero-text p {
-    font-size: 1.5em;
+    font-size: 1.5em; /* Adjust size */
     margin-bottom: 20px;
 }
 .btn {
@@ -47,7 +48,7 @@ nav a:hover {
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 1.2em;
+    font-size: 1.2em; /* Increase size of buttons */
     margin-top: 20px;
     transition: background-color 0.3s;
 }
@@ -104,15 +105,24 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Responsive Design */
+/* Responsive Design (Make it more readable on smaller screens) */
 @media (max-width: 768px) {
-    .feature-items {
-        grid-template-columns: 1fr;
-    }
+    /* Adjusting hero font size */
     .hero h1 {
-        font-size: 2em;
+        font-size: 2.5em;
     }
     .hero-text p {
         font-size: 1.2em;
+    }
+
+    /* Make category images stack vertically on small screens */
+    .feature-items {
+        grid-template-columns: 1fr;
+    }
+
+    /* Adjust button size */
+    .btn {
+        font-size: 1em;
+        padding: 10px 20px;
     }
 }
