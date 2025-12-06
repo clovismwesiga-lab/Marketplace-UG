@@ -1,58 +1,131 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Marketplace UG</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marketplace UG</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            font-size: 20px; /* Larger, easier to read */
+        }
+
+        header {
+            background: #1d4ed8;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        nav {
+            background: #0f172a;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 15px;
+            font-size: 22px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 30px;
+            color: #1e3a8a;
+        }
+
+        .contact-box {
+            margin-top: 30px;
+            background: #e0f2fe;
+            padding: 20px;
+            border-left: 5px solid #0284c7;
+            font-size: 22px;
+            border-radius: 8px;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            margin-top: 15px;
+            background: #25d366;
+            padding: 15px 25px;
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            padding: 20px;
+            background: #0f172a;
+            color: white;
+            font-size: 18px;
+        }
+    </style>
 </head>
 
 <body>
 
+<header>Marketplace UG</header>
+
 <nav>
-  <a href="index.html">Home</a>
-  <a href="post.html">Post Item</a>
-  <a href="about.html">About</a>
-  <a href="testimonials.html">Testimonials</a>
-  <a href="contact.html">Contact</a>
+    <a href="#">Home</a>
+    <a href="#">Post Item</a>
+    <a href="#">Testimonials</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
 </nav>
 
-<div class="hero">Marketplace UG – Buy & Sell Locally</div>
+<div class="container">
+    <h2>Welcome to Marketplace UG</h2>
+    <p>
+        Uganda’s fastest-growing online marketplace designed for everyday buyers and sellers.
+        Easily post items, discover deals, and connect quickly without complicated logins.
+    </p>
 
-<div class="card">
-  <h3>Popular Categories</h3>
-  <p>Phones | Cars | Land | Furniture | Jobs | Electronics | Fashion | Services</p>
+    <p>
+        Our mission is to make online selling simple, mobile-first, and accessible to everyone — especially
+        those using smaller devices. This version has larger text, cleaner design, and clearer navigation.
+    </p>
+
+    <div class="contact-box">
+        <strong>WhatsApp Contact:</strong><br>
+        0748787964
+
+        <br><br>
+        <a class="btn-whatsapp" href="https://wa.me/256748787964">
+            Chat on WhatsApp
+        </a>
+    </div>
 </div>
 
-<div class="card">
-  <h3>Featured Listings</h3>
-  <div id="featured"></div>
-</div>
-
-<script type="module" src="firebase-init.js"></script>
-<script type="module">
-  import { db } from "./firebase-init.js";
-  import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
-  async function loadFeatured() {
-    let container = document.getElementById("featured");
-    let items = await getDocs(collection(db, "listings"));
-
-    items.forEach(doc => {
-      let data = doc.data();
-      container.innerHTML += `
-        <div class="card">
-          <img src="${data.imageURL}" class="listing-img">
-          <h3>${data.title}</h3>
-          <p>UGX ${data.price}</p>
-          <a href="product.html?id=${doc.id}">
-            <button>View Item</button>
-          </a>
-        </div>
-      `;
-    });
-  }
-
-  loadFeatured();
-</script>
+<footer>
+    © 2025 Marketplace UG — All Rights Reserved
+</footer>
 
 </body>
 </html>
