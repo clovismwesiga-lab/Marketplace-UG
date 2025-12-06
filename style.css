@@ -1,181 +1,127 @@
-/* GLOBAL SETTINGS */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: 'Roboto', sans-serif;
-    background: #f7f7f7;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
     color: #222;
-    line-height: 1.55;
 }
 
-/* NAVIGATION */
-.nav {
-    background: #ffffff;
-    padding: 15px 20px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-}
-
-.logo {
-    font-weight: 700;
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.nav-links a {
-    margin: 0 10px;
-    color: #333;
-    font-weight: 500;
-    text-decoration: none;
-}
-
-.nav-links a:hover {
-    color: #0066cc;
-}
-
-/* HERO SECTION */
-.hero {
-    position: relative;
-    height: 60vh;
-    background-image: url('images/hero.jpg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+header {
+    background: #1565c0;
+    padding: 20px;
     text-align: center;
     color: white;
 }
 
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.45);
+header h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: bold;
 }
 
-.hero-text {
-    position: relative;
-    z-index: 2;
-    padding: 10px;
+.tagline {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-top: 5px;
 }
 
-.hero h1 {
-    font-size: 2em;
-    font-weight: 700;
-    margin-bottom: 10px;
-    text-shadow: 0 0 8px rgba(0,0,0,0.8);
+.top-nav {
+    display: flex;
+    justify-content: space-around;
+    background: #fff;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
 }
 
-.hero p {
-    font-size: 1.1em;
-    margin-bottom: 20px;
-    text-shadow: 0 0 8px rgba(0,0,0,0.8);
-}
-
-.hero-buttons a {
-    display: inline-block;
-    padding: 12px 18px;
-    border-radius: 6px;
-    margin: 5px;
-    font-size: 1em;
+.top-nav a {
     text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding: 8px 14px;
+    border-radius: 6px;
 }
 
-.btn-primary {
-    background: #ffae00;
-    color: #000;
-    font-weight: 700;
+.top-nav a.active {
+    background: #1565c0;
+    color: white;
 }
 
-.btn-secondary {
-    background: white;
-    color: #000;
-    font-weight: 600;
-}
-
-/* CATEGORY SECTION */
-.categories {
-    padding: 30px 20px;
-}
-
-.categories h2 {
+.hero {
+    padding: 20px;
     text-align: center;
-    margin-bottom: 25px;
+    background: white;
+    margin-top: 8px;
+}
+
+.categories {
+    padding: 20px;
 }
 
 .cat-grid {
     display: grid;
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
 }
 
-.cat-card {
+.cat-box {
+    background: #fff;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+    text-align: center;
+    font-weight: bold;
+}
+
+.recent-items {
+    padding: 20px;
+}
+
+.item-card {
     background: white;
-    padding: 15px;
+    margin-bottom: 16px;
+    padding: 14px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.cat-card img {
+.item-card img {
     width: 100%;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 10px;
+    border-radius: 8px;
 }
 
-/* TESTIMONIALS */
-.testimonials {
-    background: #ffffff;
-    padding: 35px 20px;
+.form-section {
+    padding: 20px;
+}
+
+form label {
     margin-top: 10px;
-}
-
-.testimonials h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.testimonial-box {
-    background: #fafafa;
-    padding: 15px 20px;
-    border-left: 4px solid #ffae00;
-    margin-bottom: 15px;
-    border-radius: 6px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
-}
-
-.testimonial-box span {
     display: block;
-    margin-top: 8px;
-    font-size: 0.9em;
-    color: #555;
+    font-weight: bold;
 }
 
-/* FOOTER */
-footer {
-    background: #222;
-    color: #fff;
-    text-align: center;
-    padding: 15px;
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid #bbb;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
     margin-top: 20px;
-    font-size: 0.9em;
+    background: #1565c0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
 }
 
-/* RESPONSIVE */
-@media (min-width: 768px) {
-    .cat-grid {
-        grid-template-columns: repeat(3, 1fr);
+footer {
+    margin-top: 30px;
+    text-align: center;
+    padding: 14px;
+    background: #fff;
+    border-top: 1px solid #ddd;
     }
-
-    .hero h1 {
-        font-size: 2.7em;
-    }
-    }
+    
