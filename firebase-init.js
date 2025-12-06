@@ -1,4 +1,9 @@
-// Initialize Firebase
+// Firebase v10 (CDN)
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getStorage } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
 const firebaseConfig = {
   apiKey: "AIzaSyBk0snfesd3PFMA7fPuS0hQJ4cgBOZDviE",
   authDomain: "marketplace-ug-a9bd5.firebaseapp.com",
@@ -8,7 +13,7 @@ const firebaseConfig = {
   appId: "1:401110359190:web:ae6c7e7dfdd0e45008f6b7"
 };
 
-firebase.initializeApp(firebaseConfig);
-
-const db = firebase.firestore();
-const storage = firebase.storage();
+export const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);
+export const storage = getStorage(app);
+export const auth = getAuth(app);
