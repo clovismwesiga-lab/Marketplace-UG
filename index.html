@@ -5,84 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marketplace UG</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<!-- NAVIGATION -->
-<nav class="nav">
-    <h2 class="logo">Marketplace UG</h2>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="marketplace.html">Marketplace</a>
-        <a href="add-listing.html">Add Listing</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </div>
-</nav>
-
-<!-- HERO SECTION -->
-<header class="hero">
-    <div class="overlay"></div>
-    <div class="hero-text">
-        <h1>Buy & Sell Across Uganda</h1>
-        <p>Fast, safe, and easy. Your trusted marketplace for everything.</p>
-        <div class="hero-buttons">
-            <a href="marketplace.html" class="btn-primary">Browse Listings</a>
-            <a href="add-listing.html" class="btn-secondary">Post Your Item</a>
-        </div>
-    </div>
+<header>
+    <h1>Marketplace UG</h1>
+    <p class="tagline">Buy • Sell • Connect Across Uganda</p>
 </header>
 
-<!-- CATEGORIES -->
+<nav class="top-nav">
+    <a href="index.html" class="active">Home</a>
+    <a href="add-listing.html">Post Item</a>
+</nav>
+
+<section class="hero">
+    <h2>Trusted Local Deals in Uganda</h2>
+    <p>Find items from Kampala, Mbarara, Gulu, Masaka, Kabale, Arua & more.</p>
+</section>
+
 <section class="categories">
-    <h2>Popular Categories</h2>
-
+    <h3>Popular Categories</h3>
     <div class="cat-grid">
-        <div class="cat-card">
-            <img src="images/cars.jpg" alt="Cars">
-            <h3>Cars</h3>
-            <p>Used cars, new cars, car parts.</p>
-        </div>
-
-        <div class="cat-card">
-            <img src="images/electronics.jpg" alt="Electronics">
-            <h3>Electronics</h3>
-            <p>Phones, TVs, laptops & more.</p>
-        </div>
-
-        <div class="cat-card">
-            <img src="images/real-estate.jpg" alt="Real Estate">
-            <h3>Real Estate</h3>
-            <p>Houses, plots, rentals.</p>
-        </div>
+        <a class="cat-box">Phones & Tablets</a>
+        <a class="cat-box">Vehicles</a>
+        <a class="cat-box">Household Items</a>
+        <a class="cat-box">Electronics</a>
+        <a class="cat-box">Fashion</a>
+        <a class="cat-box">Property</a>
     </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="testimonials">
-    <h2>What Ugandans Say</h2>
-
-    <div class="testimonial-box">
-        <p>“I posted my Toyota Wish and it got a buyer the next day!”</p>
-        <span>- Joseph Tumusiime, Mbarara</span>
-    </div>
-
-    <div class="testimonial-box">
-        <p>“Very helpful platform. I bought a Samsung phone at a good price.”</p>
-        <span>- Sarah Nakato, Kampala</span>
-    </div>
-
-    <div class="testimonial-box">
-        <p>“Real estate listings are genuine. I found a rental quickly.”</p>
-        <span>- Samuel Kato, Mukono</span>
+<section class="recent-items">
+    <h3>Latest Listings</h3>
+    <div id="items-container">
+        <!-- Items loaded here -->
     </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-    <p>© 2025 Marketplace UG — Designed for Uganda</p>
+    <p>© 2025 Marketplace UG — Trusted Buy & Sell Platform</p>
 </footer>
 
+<script src="app.js"></script>
 </body>
 </html>
