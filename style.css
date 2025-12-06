@@ -1,43 +1,181 @@
-/* Hero Section */
-.hero {
-    background-image: url('images/hero.jpg'); /* Replace with your hero image */
-    background-size: cover;
-    background-position: center;
-    height: 60vh; /* Adjust height if needed */
-    color: white;
-    text-align: center;
-    padding: 20px;
-    position: relative;
+/* GLOBAL SETTINGS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Overlay to enhance visibility */
-.hero::before {
-    content: "";
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #f7f7f7;
+    color: #222;
+    line-height: 1.55;
+}
+
+/* NAVIGATION */
+.nav {
+    background: #ffffff;
+    padding: 15px 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.nav-links a {
+    margin: 0 10px;
+    color: #333;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #0066cc;
+}
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    height: 60vh;
+    background-image: url('images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.4); /* Dark overlay for better contrast */
-    z-index: 1; /* Place it behind the text */
+    background: rgba(0,0,0,0.45);
 }
 
-/* Styling for the text to stand out */
 .hero-text {
     position: relative;
-    z-index: 2; /* Ensure text is above the overlay */
+    z-index: 2;
+    padding: 10px;
 }
 
-.hero-text h1 {
-    font-size: 2.5em; /* Adjust size for readability */
+.hero h1 {
+    font-size: 2em;
+    font-weight: 700;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Text shadow for better visibility */
-    font-weight: bold;
+    text-shadow: 0 0 8px rgba(0,0,0,0.8);
 }
 
-.hero-text p {
-    font-size: 1.2em; /* Adjust size */
-    margin-bottom: 15px;
-    line-height: 1.6;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Add shadow to the description */
+.hero p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 8px rgba(0,0,0,0.8);
 }
+
+.hero-buttons a {
+    display: inline-block;
+    padding: 12px 18px;
+    border-radius: 6px;
+    margin: 5px;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: #ffae00;
+    color: #000;
+    font-weight: 700;
+}
+
+.btn-secondary {
+    background: white;
+    color: #000;
+    font-weight: 600;
+}
+
+/* CATEGORY SECTION */
+.categories {
+    padding: 30px 20px;
+}
+
+.categories h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.cat-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.cat-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.cat-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* TESTIMONIALS */
+.testimonials {
+    background: #ffffff;
+    padding: 35px 20px;
+    margin-top: 10px;
+}
+
+.testimonials h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.testimonial-box {
+    background: #fafafa;
+    padding: 15px 20px;
+    border-left: 4px solid #ffae00;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.testimonial-box span {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* FOOTER */
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+    .cat-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 2.7em;
+    }
+    }
