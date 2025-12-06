@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Post Item</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="post.html">Post Item</a>
+</nav>
+
+<div class="card">
+  <h2>Post Your Item</h2>
+
+  <input id="title" placeholder="Item Name">
+  <input id="price" placeholder="Price (UGX)">
+  <textarea id="desc" placeholder="Description"></textarea>
+  <input type="file" id="imageFile">
+
+  <button id="postBtn">Submit Listing</button>
+</div>
+
+<script type="module" src="firebase-init.js"></script>
+<script type="module">
+  import { db, storage } from "./firebase-init.js";
+  import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+  import { ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
+
+  document.getElementById("postBtn").onclick = async () => {
+    let file = document.getElementById("imageFile").files[0];
+    let storageRef = ref(storage, "images/" + file.name);
+
+    await uploadBytes(storageRef, file);
+    let imageURL = await getDownloadURL(storageRef);
+
+    await addDoc(collection(db, "listings"), {
+      title: document.getElementById("title").value,
+      price: document.getElementById("price").value,
+      desc: document.getElementById("desc").value,
+      imageURL: imageURL,
+      approved: false
+    });
+
+    alert("Item posted! Waiting for admin approval.");
+    window.location.href = "index.html";
+  };
+</script>
+
+</body>
+</html>
