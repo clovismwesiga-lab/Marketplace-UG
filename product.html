@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product – Marketplace UG</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+</nav>
+
+<div id="productArea" class="card"></div>
+
+<script type="module" src="firebase-init.js"></script>
+<script type="module">
+  import { db } from "./firebase-init.js";
+  import {
+    doc,
+    getDoc
+  } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+
+  async function loadProduct() {
+    let d = await getDoc(doc(db, "listings", id));
+    let data = d.data();
+
+    document.getElementById("productArea").innerHTML = `
+      <img src="${data.imageURL}" class="listing-img">
+      <h2>${data.title}</h2>
+      <h3>UGX ${data.price}</h3>
+      <p>${data.desc}</p>
+      <a href="https://wa.me/256XXXXXXXXX?text=I'm interested in ${data.title}">
+        <button>Contact Seller</button>
+      </a>
+    `;
+  }
+
+  loadProduct();
+</script>
+
+</body>
+</html>
