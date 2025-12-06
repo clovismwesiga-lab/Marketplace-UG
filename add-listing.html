@@ -3,63 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Listing - Marketplace UG</title>
+    <title>Post Item — Marketplace UG</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- NAVIGATION -->
-<nav class="nav">
-    <h2 class="logo">Marketplace UG</h2>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="marketplace.html">Marketplace</a>
-        <a href="add-listing.html">Add Listing</a>
-    </div>
+<header>
+    <h1>Post Your Item</h1>
+</header>
+
+<nav class="top-nav">
+    <a href="index.html">Home</a>
+    <a href="add-listing.html" class="active">Post Item</a>
 </nav>
 
-<!-- PAGE TITLE -->
-<section class="page-title">
-    <h1>Add Your Listing</h1>
-    <p>Post your item and reach thousands of Ugandan buyers</p>
-</section>
+<section class="form-section">
+    <h2>Add New Item</h2>
 
-<!-- FORM -->
-<section class="form-container">
-    <form>
+    <form id="listingForm" enctype="multipart/form-data">
 
-        <label>Item Title</label>
-        <input type="text" placeholder="E.g. iPhone 12, Toyota Wish, House for rent">
-
-        <label>Category</label>
-        <select>
-            <option>Choose category</option>
-            <option>Cars</option>
-            <option>Electronics</option>
-            <option>Real Estate</option>
-        </select>
+        <label>Item Name</label>
+        <input type="text" id="title" required placeholder="e.g. Infinix Hot 30">
 
         <label>Price (UGX)</label>
-        <input type="number" placeholder="Enter amount">
+        <input type="number" id="price" required placeholder="e.g. 250000">
 
         <label>Location</label>
-        <input type="text" placeholder="E.g. Kampala, Mbarara, Gulu">
+        <input type="text" id="location" required placeholder="e.g. Kampala, Mbarara">
+
+        <label>Phone Number</label>
+        <input type="text" id="phone" required placeholder="e.g. 0772 000000">
+
+        <label>Image</label>
+        <input type="file" id="image" accept="image/*" required>
 
         <label>Description</label>
-        <textarea rows="5" placeholder="Describe the item clearly..."></textarea>
+        <textarea id="description" required></textarea>
 
-        <label>Upload Image</label>
-        <input type="file">
-
-        <button class="btn-primary submit-btn">Post Listing</button>
+        <button type="submit">Post Item</button>
 
     </form>
+
 </section>
 
-<!-- FOOTER -->
 <footer>
-    <p>© 2025 Marketplace UG — Designed for Uganda</p>
+    <p>© 2025 Marketplace UG</p>
 </footer>
+
+<script src="app.js"></script>
 
 </body>
 </html>
