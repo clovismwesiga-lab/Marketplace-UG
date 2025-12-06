@@ -1,382 +1,99 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Marketplace UG</title>
-  <meta name="description" content="Marketplace UG - Buy & Sell in Uganda. Post free listings. Admin approves purchase requests."/>
-  <style>
-    /* Mobile-first readable styles */
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
-    :root{--accent:#f4a261;--dark:#222;--muted:#777}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Roboto,Arial,sans-serif;background:#f4f4f9;color:var(--dark);padding:12px}
-    .nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;background:#111;padding:10px;border-radius:8px}
-    .nav a{color:#fff;text-decoration:none;padding:8px 10px;border-radius:6px;font-weight:700;font-size:14px}
-    .nav a:hover{background:#222}
-    .hero{background:linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url('') center/cover no-repeat;height:40vh;border-radius:10px;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px}
-    .hero h1{margin:0;font-size:1.6rem;text-shadow:0 6px 18px rgba(0,0,0,0.45)}
-    .hero p{margin:8px 0 0;font-size:1rem;line-height:1.5}
-    .btn{display:inline-block;margin:10px 6px;padding:10px 16px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-weight:700}
-    .content{padding:12px 0}
-    .section-title{font-size:1.1rem;margin:10px 0;font-weight:700}
-    .feature-items{display:grid;gap:12px}
-    .listing{background:#fff;padding:12px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
-    input,textarea,button,select{width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid #ddd;font-size:15px}
-    button{background:#111;color:#fff;border:none}
-    .small{font-size:0.95rem;color:var(--muted)}
-    footer{margin-top:14px;text-align:center;color:#666;font-size:14px}
-    .admin-actions{display:flex;gap:8px;flex-wrap:wrap}
-    .admin-approve{background:#2b7a78;color:#fff;padding:8px;border-radius:8px;border:none}
-    .admin-reject{background:#d9534f;color:#fff;padding:8px;border-radius:8px;border:none}
-    .contact-box{background:#fff;padding:10px;border-radius:8px;display:flex;gap:10px;align-items:center;justify-content:space-between}
-    /* Desktop */
-    @media(min-width:769px){
-      .feature-items{grid-template-columns:repeat(3,1fr)}
-      .hero{height:50vh}
-      .hero h1{font-size:2.2rem}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace UG - Home</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f6fa;
+            font-size: 20px;
+        }
+        header {
+            background: #004aad;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        nav {
+            background: #013575;
+            padding: 12px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            padding: 10px 15px;
+            margin: 5px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .container {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        footer {
+            background: #004aad;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            margin-top: 40px;
+        }
+        .wa-btn {
+            background: #25d366;
+            padding: 12px;
+            color: white;
+            display: inline-block;
+            border-radius: 8px;
+            margin-top: 10px;
+            text-decoration: none;
+            font-size: 22px;
+        }
+    </style>
 </head>
+
 <body>
 
-  <nav class="nav" aria-label="Main navigation">
-    <a href="#home" onclick="goHome(event)">Home</a>
-    <a href="#marketplace" onclick="goMarketplace(event)">Marketplace</a>
-    <a href="#post" onclick="goPost(event)">Post Item</a>
-    <a href="#about" onclick="goAbout(event)">About</a>
-    <a href="#testimonials" onclick="goTestimonials(event)">Testimonials</a>
-    <a href="#contact" onclick="goContact(event)">Contact</a>
-    <a href="#admin" onclick="goAdmin(event)">Admin</a>
-  </nav>
+<header>Marketplace UG</header>
 
-  <main id="app">
-    <!-- HOME -->
-    <section id="home" class="content">
-      <div class="hero" id="hero">
-        <div>
-          <h1>Marketplace UG</h1>
-          <p>Buy & Sell Locally — Post for free. Buyers request purchases which are approved by admin.</p>
-          <div style="margin-top:10px">
-            <a class="btn" href="#marketplace" onclick="goMarketplace(event)">Browse Marketplace</a>
-            <a class="btn" href="#post" onclick="goPost(event)">Post an Item</a>
-          </div>
-        </div>
-      </div>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="marketplace.html">Marketplace</a>
+    <a href="post.html">Post Item</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+</nav>
 
-      <div style="margin-top:12px">
-        <div class="section-title">Popular Categories</div>
-        <div class="small">Phones • Cars • Land • Furniture • Jobs • Electronics • Services</div>
-      </div>
+<div class="container">
 
-      <div style="margin-top:12px">
-        <div class="section-title">Featured Listings</div>
-        <div id="featured" class="feature-items">
-          <!-- Filled by JS -->
-        </div>
-      </div>
-    </section>
+    <div class="card">
+        <h2>Welcome to Marketplace UG</h2>
+        <p>Buy and sell easily across Uganda. Free listings. No login required.</p>
+    </div>
 
-    <!-- MARKETPLACE -->
-    <section id="marketplace" class="content" style="display:none">
-      <div class="section-title">Marketplace Listings</div>
-      <div id="listings" class="feature-items"></div>
-    </section>
+    <div class="card">
+        <h2>Need Help?</h2>
+        <p>Chat with us instantly on WhatsApp:</p>
+        <a class="wa-btn" href="https://wa.me/256748787964">WhatsApp: 0748 787 964</a>
+    </div>
 
-    <!-- POST -->
-    <section id="post" class="content" style="display:none">
-      <div class="section-title">Post an Item (FREE)</div>
-      <form id="listingForm">
-        <input id="title" placeholder="Item title (e.g., Samsung Phone)" required />
-        <textarea id="description" placeholder="Short description" rows="3" required></textarea>
-        <input id="price" type="number" placeholder="Price (UGX)" required />
-        <input id="contact" placeholder="Contact phone or email (visible on listing)" value="+256748787964" required />
-        <input id="image" type="url" placeholder="Image URL (optional)" />
-        <button type="submit">Post Listing</button>
-      </form>
-      <div id="result" class="small"></div>
-    </section>
+</div>
 
-    <!-- ABOUT -->
-    <section id="about" class="content" style="display:none">
-      <div class="section-title">About Marketplace UG</div>
-      <div class="small">Marketplace UG connects buyers and sellers across Uganda. Post free listings. Buyers create a purchase request which must be approved by admin before the buyer proceeds with payment. This reduces fraud and ensures trust.</div>
-    </section>
+<footer>Marketplace UG © 2025 • Trusted Online Market in Uganda</footer>
 
-    <!-- TESTIMONIALS -->
-    <section id="testimonials" class="content" style="display:none">
-      <div class="section-title">What Our Users Say</div>
-      <div class="listing">"Sold my taxi in one week!" — <strong>Joseph Tumusiime, Kampala</strong></div>
-      <div class="listing">"Found a cheap phone quickly." — <strong>Patricia Nabukenya, Mukono</strong></div>
-      <div class="listing">"Great service for local deals." — <strong>Samuel Kato, Jinja</strong></div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="content" style="display:none">
-      <div class="section-title">Contact</div>
-      <div class="contact-box">
-        <div>
-          <div class="small">WhatsApp / Phone</div>
-          <div style="font-weight:700">+256 748 787 964</div>
-          <div class="small" style="margin-top:6px">Tap to message on WhatsApp</div>
-        </div>
-        <div>
-          <a class="btn" href="https://wa.me/256748787964?text=Hello%20Marketplace%20UG" target="_blank">Message on WhatsApp</a>
-        </div>
-      </div>
-
-      <div style="margin-top:12px" class="small">Email: support@marketplaceug.com</div>
-    </section>
-
-    <!-- ADMIN (protected) -->
-    <section id="admin" class="content" style="display:none">
-      <div class="section-title">Admin Panel</div>
-      <div id="adminArea">
-        <div class="small">You must unlock admin controls to view pending orders and approve them.</div>
-        <button id="unlockBtn" class="btn" style="margin-top:10px">Unlock Admin</button>
-        <div id="adminControls" style="display:none;margin-top:12px">
-          <div class="small">Pending orders (approve before buyer proceeds)</div>
-          <div id="pendingOrders"></div>
-          <hr/>
-          <div class="small">Active listings</div>
-          <div id="pendingListings"></div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    © 2025 Marketplace UG • <a href="#contact" onclick="goContact(event)">Contact</a>
-  </footer>
-
-  <!-- Firebase (compat) CDN - easy to use inline -->
-  <script id="firebase-cdn">
-    // Using compat to make inline coding easier
-    // No sensitive data beyond firebaseConfig is exposed here (config is required for client apps)
-  </script>
-
-  <script id="firebase-config">
-  // ======= FIREBASE CONFIG =======
-  // If you already created the Firebase web app, these values should match your project's settings.
-  // I left the values you previously pasted. If any differ, update them here.
-  const firebaseConfig = {
-    apiKey: "AIzaSyBk0snfesd3PFMA7fPuS0hQJ4cgBOZDviE",
-    authDomain: "marketplace-ug-a9bd5.firebaseapp.com",
-    projectId: "marketplace-ug-a9bd5",
-    storageBucket: "marketplace-ug-a9bd5.appspot.com",
-    messagingSenderId: "401110359190",
-    appId: "1:401110359190:web:ae6c7e7dfdd0e45008f6b7"
-  };
-  </script>
-
-  <script>
-  // Load Firebase compat libs then initialize (keeps this file single-file and easy)
-  (function loadFirebaseAndInit(){
-    const libs = [
-      "https://www.gstatic.com/firebasejs/9.24.0/firebase-app-compat.js",
-      "https://www.gstatic.com/firebasejs/9.24.0/firebase-firestore-compat.js",
-      "https://www.gstatic.com/firebasejs/9.24.0/firebase-auth-compat.js",
-      "https://www.gstatic.com/firebasejs/9.24.0/firebase-storage-compat.js"
-    ];
-    let loaded = 0;
-    function onlib(){
-      loaded++;
-      if(loaded===libs.length) initApp();
-    }
-    libs.forEach(src=>{
-      const s=document.createElement('script');
-      s.src=src;
-      s.onload=onlib;
-      s.onerror=()=>console.error('Failed to load',src);
-      document.head.appendChild(s);
-    });
-
-    function initApp(){
-      try{
-        firebase.initializeApp(firebaseConfig);
-        window.db = firebase.firestore();
-        window.storage = firebase.storage();
-        console.log('Firebase initialized (compat).');
-        setupApp();
-      }catch(e){
-        console.error('Firebase init error',e);
-      }
-    }
-  })();
-  </script>
-
-  <script>
-  // MAIN APP LOGIC (runs after Firebase init)
-  function setupApp(){
-    if(!window.db){ console.warn('db missing'); return; }
-
-    const listingsCol = () => window.db.collection('listings');
-    const ordersCol = () => window.db.collection('orders');
-
-    // navigation helpers
-    function hideAll(){ document.querySelectorAll('main > section').forEach(s=>s.style.display='none'); }
-    window.goHome = (e)=>{ e && e.preventDefault(); hideAll(); document.getElementById('home').style.display='block'; }
-    window.goMarketplace = (e)=>{ e && e.preventDefault(); hideAll(); document.getElementById('marketplace').style.display='block'; loadListings(); }
-    window.goPost = (e)=>{ e && e.preventDefault(); hideAll(); document.getElementById('post').style.display='block'; }
-    window.goAbout = (e)=>{ e && e.preventDefault(); hideAll(); document.getElementById('about').style.display='block'; }
-    window.goTestimonials = (e)=>{ e && e.preventDefault(); hideAll(); document.getElementById('testimonials').style.display='block'; }
-    window.goContact = (e)=>{ e && e.preventDefault(); hideAll(); document.getElementById('contact').style.display='block'; }
-    window.goAdmin = (e)=>{ e && e.preventDefault(); hideAll(); document.getElementById('admin').style.display='block'; }
-
-    // render functions
-    async function loadFeatured(){
-      try{
-        const snap = await listingsCol().where('status','==','active').orderBy('createdAt','desc').limit(6).get();
-        const container = document.getElementById('featured');
-        container.innerHTML = '';
-        snap.forEach(doc=>{
-          const data = doc.data();
-          const div = document.createElement('div');
-          div.className = 'listing';
-          div.innerHTML = `<h3>${escapeHtml(data.title)}</h3>
-            <p>${escapeHtml(data.description)}</p>
-            <p><strong>UGX ${data.price}</strong></p>
-            ${data.image?`<img src="${escapeHtml(data.image)}" alt="" style="max-width:100%;border-radius:8px;margin-top:8px">`:''}
-            <div style="margin-top:8px">
-              <button class="btn" onclick="startBuy('${doc.id}','${escapeHtml(data.title)}')">Buy / Request</button>
-            </div>`;
-          container.appendChild(div);
-        });
-      }catch(e){ console.error(e) }
-    }
-    async function loadListings(){
-      try{
-        const snap = await listingsCol().where('status','==','active').orderBy('createdAt','desc').get();
-        const container = document.getElementById('listings');
-        container.innerHTML = '';
-        snap.forEach(doc=>{
-          const d = doc.data();
-          const el = document.createElement('div');
-          el.className='listing';
-          el.innerHTML = `<h3>${escapeHtml(d.title)}</h3><p>${escapeHtml(d.description)}</p><p><strong>UGX ${d.price}</strong></p>
-            ${d.image?`<img src="${escapeHtml(d.image)}" alt="" style="max-width:100%;border-radius:8px;margin-top:8px">`:''}
-            <div style="margin-top:8px"><button class="btn" onclick="startBuy('${doc.id}','${escapeHtml(d.title)}')">Buy / Request</button></div>`;
-          container.appendChild(el);
-        });
-      }catch(e){ console.error(e) }
-    }
-
-    // posting form
-    const form = document.getElementById('listingForm');
-    form?.addEventListener('submit', async (ev)=>{
-      ev.preventDefault();
-      const title = document.getElementById('title').value.trim();
-      const description = document.getElementById('description').value.trim();
-      const price = Number(document.getElementById('price').value);
-      const contact = document.getElementById('contact').value.trim();
-      const image = document.getElementById('image').value.trim();
-      if(!title||!description||!price||!contact){ alert('Please complete all fields'); return; }
-      try{
-        await listingsCol().add({title,description,price,contact,image,status:'active',createdAt: firebase.firestore.FieldValue.serverTimestamp()});
-        document.getElementById('result').innerText = 'Listing posted successfully (it will appear shortly).';
-        form.reset();
-        loadFeatured();
-      }catch(e){ console.error(e); alert('Post failed'); }
-    });
-
-    // start buy / create order (pending)
-    window.startBuy = async function(listingId, title){
-      const buyer = prompt('Enter your name');
-      const contact = prompt('Enter your contact phone or email');
-      if(!buyer || !contact){ alert('Name and contact required'); return; }
-      try{
-        await ordersCol().add({listingId, title, buyer, contact, status:'pending', createdAt: firebase.firestore.FieldValue.serverTimestamp()});
-        alert('Purchase request created. Admin will approve before you proceed.');
-      }catch(e){ console.error(e); alert('Failed to create request'); }
-    };
-
-    // admin unlock (simple MVP)
-    document.getElementById('unlockBtn').addEventListener('click', async ()=>{
-      const p = prompt('Enter admin password to unlock admin controls');
-      // Quick MVP password - change in code as needed
-      if(p === 'admin123'){
-        document.getElementById('adminControls').style.display = 'block';
-        document.getElementById('unlockBtn').style.display = 'none';
-        loadAdmin();
-      } else {
-        alert('Wrong password');
-      }
-    });
-
-    async function loadAdmin(){
-      try{
-        // pending orders
-        const ordersSnap = await ordersCol().where('status','==','pending').orderBy('createdAt','desc').get();
-        const po = document.getElementById('pendingOrders');
-        po.innerHTML = '';
-        ordersSnap.forEach(doc=>{
-          const d = doc.data();
-          const div = document.createElement('div');
-          div.className = 'listing';
-          div.innerHTML = `<strong>${escapeHtml(d.title)}</strong>
-            <p>Buyer: ${escapeHtml(d.buyer)} | Contact: ${escapeHtml(d.contact)}</p>
-            <div class="admin-actions">
-              <button class="admin-approve" onclick="approveOrder('${doc.id}')">Approve</button>
-              <button class="admin-reject" onclick="rejectOrder('${doc.id}')">Reject</button>
-            </div>`;
-          po.appendChild(div);
-        });
-
-        // active listings
-        const listingsSnap = await listingsCol().where('status','==','active').orderBy('createdAt','desc').get();
-        const pl = document.getElementById('pendingListings');
-        pl.innerHTML = '';
-        listingsSnap.forEach(doc=>{
-          const d = doc.data();
-          const div = document.createElement('div');
-          div.className = 'listing';
-          div.innerHTML = `<strong>${escapeHtml(d.title)}</strong><p>${escapeHtml(d.description)}</p>`;
-          pl.appendChild(div);
-        });
-
-      }catch(e){ console.error(e) }
-    }
-
-    window.approveOrder = async function(id){
-      if(!confirm('Approve this order?')) return;
-      try{
-        const ref = ordersCol().doc(id);
-        await ref.update({status:'approved', approvedAt: firebase.firestore.FieldValue.serverTimestamp()});
-        alert('Order approved. Please contact the buyer to proceed.');
-        loadAdmin();
-      }catch(e){ console.error(e); alert('Approve failed');}
-    };
-    window.rejectOrder = async function(id){
-      if(!confirm('Reject this order?')) return;
-      try{
-        const ref = ordersCol().doc(id);
-        await ref.update({status:'rejected', decidedAt: firebase.firestore.FieldValue.serverTimestamp()});
-        alert('Order rejected');
-        loadAdmin();
-      }catch(e){ console.error(e); alert('Reject failed');}
-    };
-
-    // helper
-    function escapeHtml(s){ return (s||'').toString().replace(/[&<>"]/g, (c)=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
-
-    // initial load
-    goHome();
-    loadFeatured();
-
-    // expose some for debug
-    window.loadAdmin = loadAdmin;
-    window.loadFeatured = loadFeatured;
-    window.loadListings = loadListings;
-  }
-  </script>
-
-  <script>
-  // Quick uploader hint for you:
-  // 1) Save this file as index.html and upload to GitHub root (Add file -> Upload files -> Commit)
-  // 2) In Firebase console: enable Firestore (create DB in test mode for now)
-  // 3) Keep Firestore rules relaxed only for initial testing, then secure them.
-  // 4) To change admin password, edit the 'admin123' literal in this file after uploading.
-  </script>
 </body>
-        </html>
+</html>
