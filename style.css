@@ -1,176 +1,43 @@
-/* Global body styles */
-body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f9;
-    padding: 10px;
-}
-
-/* Navigation Bar */
-nav {
-    background-color: #333;
-    padding: 12px 0;
-    text-align: center;
-    font-size: 16px;
-}
-nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-nav a:hover {
-    color: #f4a261;
-}
-
 /* Hero Section */
 .hero {
-    background-image: url('images/hero.jpg'); /* Add your hero image here */
+    background-image: url('images/hero.jpg'); /* Replace with your hero image */
     background-size: cover;
     background-position: center;
-    height: 60vh;
+    height: 60vh; /* Adjust height if needed */
     color: white;
     text-align: center;
     padding: 20px;
     position: relative;
 }
+
+/* Overlay to enhance visibility */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay for better contrast */
+    z-index: 1; /* Place it behind the text */
+}
+
+/* Styling for the text to stand out */
+.hero-text {
+    position: relative;
+    z-index: 2; /* Ensure text is above the overlay */
+}
+
 .hero-text h1 {
-    font-size: 2.5em; /* Adjusted size for readability on phones */
+    font-size: 2.5em; /* Adjust size for readability */
     margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Text shadow for better visibility */
+    font-weight: bold;
 }
+
 .hero-text p {
-    font-size: 1.2em; /* Slightly smaller for easier reading */
+    font-size: 1.2em; /* Adjust size */
     margin-bottom: 15px;
-    line-height: 1.6; /* More space between lines */
-}
-.btn {
-    padding: 12px 20px;
-    background-color: #f4a261;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    margin-top: 20px;
-    display: inline-block;
-    transition: background-color 0.3s;
-}
-.btn:hover {
-    background-color: #e76f51;
-}
-
-/* Featured Categories Section */
-.features {
-    text-align: center;
-    padding: 40px 20px;
-}
-.feature-items {
-    display: grid;
-    grid-template-columns: 1fr; /* Stack items vertically on smaller screens */
-    gap: 20px;
-}
-.feature-item {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.feature-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-.feature-item h3 {
-    margin-top: 10px;
-    font-size: 1.4em;
-}
-.feature-item p {
-    color: #777;
-    font-size: 1em;
-}
-
-/* Testimonials Section */
-.testimonials {
-    background-color: #e9e9e9;
-    padding: 40px 20px;
-    text-align: center;
-}
-.testimonial {
-    margin-bottom: 20px;
-    font-style: italic;
-    font-size: 1.1em;
-}
-
-/* Footer Section */
-footer {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    font-size: 1em;
-}
-footer a {
-    color: #f4a261;
-    text-decoration: none;
-}
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* Responsive Design (Mobile-first) */
-@media (max-width: 768px) {
-    /* Mobile-friendly layout */
-    .hero {
-        height: 50vh; /* Make hero section smaller on phones */
-    }
-    .hero-text h1 {
-        font-size: 2em; /* Make heading smaller for smaller screens */
-    }
-    .hero-text p {
-        font-size: 1em; /* Adjust for smaller screens */
-    }
-    .btn {
-        font-size: 1.2em;
-        padding: 12px 25px;
-    }
-
-    /* Category items stacked vertically on small screens */
-    .feature-items {
-        grid-template-columns: 1fr; /* 1 column for mobile */
-    }
-
-    /* Adjusting the buttons and margins for easier tap interaction */
-    nav a {
-        margin: 0 10px; /* Reduced space between nav links */
-    }
-
-    /* Reduce font size for smaller screen readability */
-    h2 {
-        font-size: 1.5em;
-    }
-
-    .testimonial {
-        font-size: 1.2em; /* Adjust testimonial font size */
-    }
-}
-
-/* Tablet and larger screen styles */
-@media (min-width: 769px) {
-    .hero-text h1 {
-        font-size: 3em; /* Larger font size for desktop */
-    }
-    .hero-text p {
-        font-size: 1.5em; /* Adjust for larger screens */
-    }
-
-    /* Features grid with 3 columns for larger screens */
-    .feature-items {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    /* Button sizes for tablets and above */
-    .btn {
-        font-size: 1.3em;
-        padding: 15px 30px;
-    }
+    line-height: 1.6;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Add shadow to the description */
 }
