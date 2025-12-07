@@ -1,53 +1,42 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Post Item</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Post Item — Marketplace UG</title>
+  <link rel="stylesheet" href="./styles.css">
 </head>
-
 <body>
+  <header class="nav">
+    <a href="./index.html" class="brand">Marketplace UG</a>
+    <nav>
+      <a href="./index.html">Home</a>
+      <a href="./post.html">Post Item</a>
+    </nav>
+  </header>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="post.html">Post Item</a>
-</nav>
+  <main class="container">
+    <h1>Post an Item (FREE)</h1>
 
-<div class="card">
-  <h2>Post Your Item</h2>
+    <form id="postForm">
+      <label>Title<br><input id="title" required></label>
+      <label>Category<br>
+        <select id="category">
+          <option>Phones</option><option>Cars</option><option>Land</option><option>Furniture</option>
+        </select>
+      </label>
+      <label>Price (UGX)<br><input id="price" type="number" required></label>
+      <label>Description<br><textarea id="desc" rows="4"></textarea></label>
+      <button type="submit">Post Listing</button>
+      <div id="status" role="status"></div>
+    </form>
+  </main>
 
-  <input id="title" placeholder="Item Name">
-  <input id="price" placeholder="Price (UGX)">
-  <textarea id="desc" placeholder="Description"></textarea>
-  <input type="file" id="imageFile">
+  <footer><p>© 2025 Marketplace UG</p></footer>
 
-  <button id="postBtn">Submit Listing</button>
-</div>
-
-<script type="module" src="firebase-init.js"></script>
-<script type="module">
-  import { db, storage } from "./firebase-init.js";
-  import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-  import { ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
-
-  document.getElementById("postBtn").onclick = async () => {
-    let file = document.getElementById("imageFile").files[0];
-    let storageRef = ref(storage, "images/" + file.name);
-
-    await uploadBytes(storageRef, file);
-    let imageURL = await getDownloadURL(storageRef);
-
-    await addDoc(collection(db, "listings"), {
-      title: document.getElementById("title").value,
-      price: document.getElementById("price").value,
-      desc: document.getElementById("desc").value,
-      imageURL: imageURL,
-      approved: false
-    });
-
-    alert("Item posted! Waiting for admin approval.");
-    window.location.href = "index.html";
-  };
-</script>
-
+  <script src="./firebase-config.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>
