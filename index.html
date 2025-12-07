@@ -1,55 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marketplace UG – Buy & Sell Locally</title>
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Marketplace UG</title>
+  <link rel="stylesheet" href="./styles.css">
 </head>
-
 <body>
-
-<header class="navbar">
-    <div class="logo">Marketplace UG</div>
+  <header class="nav">
+    <a href="./index.html" class="brand">Marketplace UG</a>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="post.html">Post Item</a>
-        <a href="listing.html">Listings</a>
-        <a href="about.html">About</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="contact.html">Contact</a>
+      <a href="./index.html">Home</a>
+      <a href="./post.html">Post Item</a>
+      <a href="./about.html">About</a>
+      <a href="./contact.html">Contact</a>
     </nav>
-</header>
+  </header>
 
-<section class="hero">
-    <h1>Buy & Sell Across Uganda</h1>
-    <p>Fast, simple, friendly. Post items free & reach buyers instantly.</p>
-    <a href="post.html" class="btn-primary">Post Your Item</a>
-</section>
+  <main class="container">
+    <h1>Buy & Sell Locally — Post for free</h1>
 
-<section class="categories">
-    <h2>Popular Categories</h2>
-    <div class="category-list">
-        <a>Phones</a>
-        <a>Cars</a>
-        <a>Land</a>
-        <a>Furniture</a>
-        <a>Jobs</a>
-        <a>Electronics</a>
-        <a>Fashion</a>
-    </div>
-</section>
+    <section id="popular">
+      <h2>Popular Categories</h2>
+      <p>Phones • Cars • Land • Furniture • Jobs • Electronics • Services</p>
+    </section>
 
-<section class="featured">
-    <h2>Recent Listings</h2>
-    <p>No items yet. Post yours now!</p>
-</section>
+    <section id="listings">
+      <h2>Recent Listings</h2>
+      <div id="items">Loading listings…</div>
+    </section>
+  </main>
 
-<footer>
-    <p>© 2025 Marketplace UG — All Rights Reserved</p>
-    <a href="https://wa.me/256748787964" class="whatsapp-btn">WhatsApp Us</a>
-</footer>
+  <footer>
+    <p>© 2025 Marketplace UG</p>
+  </footer>
 
+  <script src="./firebase-config.js"></script> <!-- must exist -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>
