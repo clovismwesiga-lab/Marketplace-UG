@@ -1,13 +1,20 @@
 const container = document.getElementById("listing-container");
 
+// Show skeleton loaders while waiting
+container.innerHTML = `
+  <div class="skeleton"></div>
+  <div class="skeleton"></div>
+  <div class="skeleton"></div>
+`;
+
 async function loadPosts() {
   try {
     const snapshot = await db.collection("posts")
       .orderBy("createdAt", "desc")
-      .limit(50)
+      .limit(20)
       .get();
 
-    container.innerHTML = ""; // clear loading text
+    container.innerHTML = ""; // remove skeleton
 
     if (snapshot.empty) {
       container.innerHTML = "<p>No posts yet.</p>";
@@ -22,7 +29,7 @@ async function loadPosts() {
 
       div.innerHTML = `
         <div class="item-img">
-          <img src="${item.imageUrl || 'https://via.placeholder.com/300'}" alt="No Image">
+          <img src="${item.imageUrl || 'https://via.placeholder.com/300'}">
         </div>
         <h3>${item.title}</h3>
         <p class="price">UGX ${item.price}</p>
@@ -32,9 +39,9 @@ async function loadPosts() {
       container.appendChild(div);
     });
 
-  } catch (err) {
-    console.error(err);
-    container.innerHTML = "<p>Failed to load posts. Check your internet.</p>";
+  } catch (error) {
+    console.error(error);
+    container.innerHTML = "<p>Failed to load items. Check internet.</p>";
   }
 }
 
