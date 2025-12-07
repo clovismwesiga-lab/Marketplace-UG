@@ -1,73 +1,39 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Marketplace UG</title>
-  <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
-  <header class="nav">
-    <a href="./index.html" class="brand">Marketplace UG</a>
-    <nav>
-      <a href="./index.html">Home</a>
-      <a href="./post.html">Post Item</a>
-      <a href="./about.html">About</a>
-      <a href="./contact.html">Contact</a>
-    </nav>
-  </header>
+<script type="module">
+  import { db } from "./firebase-config.js";
+  import { collection, getDocs, orderBy, query } 
+  from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-  <main class="container">
-    <h1>Buy & Sell Locally — Post for free</h1>
+  const itemsBox = document.getElementById("items");
+  itemsBox.innerHTML = "<p>Loading…</p>";
 
-    <section id="popular">
-      <h2>Popular Categories</h2>
-      <p>Phones • Cars • Land • Furniture • Jobs • Electronics • Services</p>
-    </section>
+  async function loadItems() {
+    try {
+      const q = query(collection(db, "posts"), orderBy("createdAt", "desc"));
+      const snapshot = await getDocs(q);
 
-    <section id="listings">
-      <h2>Recent Listings</h2>
-      <div id="items">Loading listings…</div>
-    </section>
-  </main>
+      if (snapshot.empty) {
+        itemsBox.innerHTML = "<p>No items posted yet.</p>";
+        return;
+      }
 
-  <footer>
-    <p>© 2025 Marketplace UG</p>
-  </footer>
+      itemsBox.innerHTML = ""; // clear loading text
 
-  <!-- Firebase Config File -->
-  <script src="./firebase-config.js"></script>
-
-  <!-- Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-
-  <!-- Get Listings -->
-  <script>
-    // Initialize Firebase
-    const app = firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-
-    // Load listings from Firestore
-    const itemsDiv = document.getElementById("items");
-    db.collection("items")
-      .orderBy("createdAt", "desc")
-      .limit(20)
-      .onSnapshot((querySnapshot) => {
-        itemsDiv.innerHTML = "";
-        querySnapshot.forEach((doc) => {
-          const item = doc.data();
-          itemsDiv.innerHTML += `
-            <div class="item-card">
-              <img src="${item.imageURL || 'no-image.png'}" alt="item">
-              <h3>${item.title}</h3>
-              <p>${item.price} UGX</p>
-              <p>${item.description}</p>
-            </div>
-          `;
-        });
+      snapshot.forEach(doc => {
+        const item = doc.data();
+        itemsBox.innerHTML += `
+          <div class="item-card">
+            <h3>${item.title}</h3>
+            <p class="price">UGX ${item.price}</p>
+            <p>${item.description}</p>
+          </div>
+        `;
       });
-  </script>
 
-</body>
-</html>
+    } catch (err) {
+      itemsBox.innerHTML = "<p>Failed to load items. Check internet.</p>";
+      console.error(err);
+    }
+  }
+
+  loadItems();
+</script>
