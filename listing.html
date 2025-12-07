@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Item Details — Marketplace UG</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listings - Marketplace UG</title>
+  <link rel="stylesheet" href="./styles.css">
 </head>
-
 <body>
 
-<header>
-    <h1>Item Details</h1>
+<header class="nav">
+  <a href="./index.html" class="brand">Marketplace UG</a>
+  <nav>
+    <a href="./index.html">Home</a>
+    <a href="./post.html">Post Item</a>
+    <a href="./about.html">About</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
 </header>
 
-<section id="listing-details"></section>
+<main class="container">
+  <h1>Recent Listings</h1>
+
+  <div id="listing-container" class="items-grid">
+    Loading listings…
+  </div>
+</main>
 
 <footer>
-    <p>© 2025 Marketplace UG</p>
+  <p>© 2025 Marketplace UG</p>
 </footer>
 
-<script src="app.js"></script>
-
-</body>
-</html>
+<!--
