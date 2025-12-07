@@ -35,9 +35,39 @@
     <p>© 2025 Marketplace UG</p>
   </footer>
 
-  <script src="./firebase-config.js"></script> <!-- must exist -->
+  <!-- Firebase Config File -->
+  <script src="./firebase-config.js"></script>
+
+  <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-  <script src="./app.js"></script>
+
+  <!-- Get Listings -->
+  <script>
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    // Load listings from Firestore
+    const itemsDiv = document.getElementById("items");
+    db.collection("items")
+      .orderBy("createdAt", "desc")
+      .limit(20)
+      .onSnapshot((querySnapshot) => {
+        itemsDiv.innerHTML = "";
+        querySnapshot.forEach((doc) => {
+          const item = doc.data();
+          itemsDiv.innerHTML += `
+            <div class="item-card">
+              <img src="${item.imageURL || 'no-image.png'}" alt="item">
+              <h3>${item.title}</h3>
+              <p>${item.price} UGX</p>
+              <p>${item.description}</p>
+            </div>
+          `;
+        });
+      });
+  </script>
+
 </body>
 </html>
