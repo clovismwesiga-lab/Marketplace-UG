@@ -2,4 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Marketplace UG</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<header class="nav">
+  <a href="./index.html" class="brand">Marketplace UG</a>
+  <nav>
+    <a href="./index.html">Home</a>
+    <a href="./post.html">Post Item</a>
+    <a href="./about.html">About</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="container">
+  <h1>Buy & Sell Locally — Post for Free</h1>
+
+  <section id="popular">
+    <h2>Popular Categories</h2>
+    <p>Phones • Cars • Land • Electronics • Services</p>
+  </section>
+
+  <section id="listings">
+    <h2>Recent Listings</h2>
+    <div id="items" class="items">Loading listings…</div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 Marketplace UG</p>
+</footer>
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+<script src="./firebase-config.js"></script>
+<script src="./script.js"></script>
+
+</body>
+</html>
