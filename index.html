@@ -1,39 +1,40 @@
-<script type="module">
-  import { db } from "./firebase-config.js";
-  import { collection, getDocs, orderBy, query } 
-  from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+<!doctype html>
+<html lang="en">
 
-  const itemsBox = document.getElementById("items");
-  itemsBox.innerHTML = "<p>Loading…</p>";
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marketplace UG</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
 
-  async function loadItems() {
-    try {
-      const q = query(collection(db, "posts"), orderBy("createdAt", "desc"));
-      const snapshot = await getDocs(q);
+<body>
+  <header class="nav">
+    <a href="./index.html" class="brand">Marketplace UG</a>
+    <nav>
+      <a href="./index.html">Home</a>
+      <a href="./post.html">Post Item</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+  </header>
 
-      if (snapshot.empty) {
-        itemsBox.innerHTML = "<p>No items posted yet.</p>";
-        return;
-      }
+  <main class="container">
+    <h1>Recent Listings</h1>
+    <div id="items">Loading listings…</div>
+  </main>
 
-      itemsBox.innerHTML = ""; // clear loading text
+  <footer>
+    <p>© 2025 Marketplace UG</p>
+  </footer>
 
-      snapshot.forEach(doc => {
-        const item = doc.data();
-        itemsBox.innerHTML += `
-          <div class="item-card">
-            <h3>${item.title}</h3>
-            <p class="price">UGX ${item.price}</p>
-            <p>${item.description}</p>
-          </div>
-        `;
-      });
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+  <script src="./firebase-config.js"></script>
 
-    } catch (err) {
-      itemsBox.innerHTML = "<p>Failed to load items. Check internet.</p>";
-      console.error(err);
-    }
-  }
+  <!-- App Script -->
+  <script src="./app.js"></script>
+</body>
 
-  loadItems();
-</script>
+</html>
