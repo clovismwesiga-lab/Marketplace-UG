@@ -1,40 +1,51 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marketplace UG</title>
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-  <header class="nav">
-    <a href="./index.html" class="brand">Marketplace UG</a>
-    <nav>
-      <a href="./index.html">Home</a>
-      <a href="./post.html">Post Item</a>
-      <a href="./contact.html">Contact</a>
-    </nav>
-  </header>
 
-  <main class="container">
-    <h1>Recent Listings</h1>
-    <div id="items">Loading listings…</div>
-  </main>
+<header class="nav">
+  <a href="./index.html" class="brand">Marketplace UG</a>
+  <nav>
+    <a href="./index.html">Home</a>
+    <a href="./post.html">Post Item</a>
+    <a href="./about.html">About</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+</header>
 
-  <footer>
-    <p>© 2025 Marketplace UG</p>
-  </footer>
+<main class="container">
 
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
-  <script src="./firebase-config.js"></script>
+  <h1>Recent Listings</h1>
 
-  <!-- App Script -->
-  <script src="./app.js"></script>
+  <div id="listings" class="listing-container">
+    <p class="loading">Loading recent items…</p>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2025 Marketplace UG</p>
+</footer>
+
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+
+<!-- Firebase Config -->
+<script src="./firebase-config.js"></script>
+
+<!-- Firebase Init (YOU ALREADY CREATED THIS FILE) -->
+<script src="./firebase-init.js"></script>
+
+<!-- Load Posts -->
+<script src="./load-posts.js"></script>
+
 </body>
-
 </html>
