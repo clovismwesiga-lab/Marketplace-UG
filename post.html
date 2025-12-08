@@ -1,55 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Post Item - Marketplace UG</title>
   <link rel="stylesheet" href="./styles.css">
 </head>
+
 <body>
 
-<header class="nav">
-  <a href="./index.html" class="brand">Marketplace UG</a>
-  <nav>
-    <a href="./index.html">Home</a>
-    <a href="./post.html">Post Item</a>
-    <a href="./about.html">About</a>
-    <a href="./contact.html">Contact</a>
-  </nav>
-</header>
+  <header class="nav">
+    <a href="./index.html" class="brand">Marketplace UG</a>
+    <nav>
+      <a href="./index.html">Home</a>
+      <a href="./post.html">Post Item</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+  </header>
 
-<main class="container">
-  <h1>Post a New Item</h1>
+  <main class="container">
+    <h1>Post a New Item</h1>
 
-  <form id="postForm">
-    <label>Title:</label>
-    <input type="text" id="title" required>
+    <form id="postForm">
+      <label>Title</label>
+      <input type="text" id="title" required>
 
-    <label>Price (UGX):</label>
-    <input type="number" id="price" required>
+      <label>Price (UGX)</label>
+      <input type="number" id="price" required>
 
-    <label>Description:</label>
-    <textarea id="description" required></textarea>
+      <label>Description</label>
+      <textarea id="description" required></textarea>
 
-    <label>Image:</label>
-    <input type="file" id="image" accept="image/*">
+      <label>Image</label>
+      <input type="file" id="image" accept="image/*">
 
-    <button type="submit">Post Item</button>
-  </form>
-</main>
+      <button type="submit">Post Item</button>
+    </form>
+  </main>
 
-<footer>
-  <p>© 2025 Marketplace UG</p>
-</footer>
+  <footer>
+    <p>© 2025 Marketplace UG</p>
+  </footer>
 
-<!-- Firebase Config -->
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
-<script src="./firebase-config.js"></script>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+  <script src="./firebase-config.js"></script>
 
-<!-- Post Script (NO MODULE, WORKS ON GITHUB) -->
-<script src="./post.js"></script>
+  <!-- Post Script -->
+  <script src="./post.js"></script>
 
 </body>
+
 </html>
